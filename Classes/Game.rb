@@ -13,6 +13,19 @@ class Game
   def score
     puts "P1: #{@p1.lives}/3 vs P2: #{@p2.lives}/3"
   end
+  def game_over
+    if @p1.alive? && @p2.alive?
+      return true
+    else
+      puts "----- GAME OVER -----"
+      puts "Goodbye!"
+    end
+  end
 end
 
 g1 = Game.new
+g1.game_over
+g1.p1.remove_life
+g1.p1.remove_life
+g1.p1.remove_life
+g1.game_over
