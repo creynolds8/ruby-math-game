@@ -8,24 +8,24 @@ class Game
     @current_player = @p1
   end
   def switch_player
-    @current_player = (current_player == @p1) ? @p2 : @p1
+    @current_player = @current_player == @p1 ? @p2 : @p1
   end
   def score
     puts "P1: #{@p1.lives}/3 vs P2: #{@p2.lives}/3"
   end
   def game_over
-    if @p1.alive? && @p2.alive?
-      return true
-    else
-      puts "----- GAME OVER -----"
-      puts "Goodbye!"
-    end
+    !@p1.alive? || !@p2.alive?
+  end
+  def winner
+    winner = @p1.alive? ? @p1 : @p2
+    puts "#{winner.name} has won with a score of #{winner.lives}/3"
   end
 end
 
 g1 = Game.new
-g1.game_over
+
+g1.switch_player
 g1.p1.remove_life
 g1.p1.remove_life
 g1.p1.remove_life
-g1.game_over
+g1.winner
