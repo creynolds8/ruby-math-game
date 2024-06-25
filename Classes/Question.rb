@@ -12,12 +12,14 @@ class Question
       false
     end
   end
+  def question
+    puts "What is #{@num1} plus #{@num2}?"
+    print ">"
+    player_answer = gets.chomp.to_i
+    self.correct_answer player_answer
+  end
 end
 
 q1 = Question.new
 
-puts q1.num1
-puts q1.num2
-puts q1.answer
-
-puts q1.correct_answer 11
+q1.ask_question
