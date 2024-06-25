@@ -1,5 +1,5 @@
 class Question
-  attr_reader :num1, :num2, :answer
+  # attr_reader :num1, :num2, :answer
   def initialize
     @num1 = rand(1...21)
     @num2 = rand(1...21)
@@ -19,7 +19,3 @@ class Question
     self.correct_answer player_answer
   end
 end
-
-q1 = Question.new
-
-q1.ask_question

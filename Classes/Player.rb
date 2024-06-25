@@ -13,9 +13,3 @@ class Player
     end
   end
 end
-
-p1 = Player.new
-puts p1.lives
-p1.remove_life
-puts p1.lives
-puts p1.alive?
