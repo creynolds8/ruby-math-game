@@ -10,6 +10,9 @@ class Game
   def switch_player
     @current_player = (current_player == @p1) ? @p2 : @p1
   end
+  def score
+    puts "P1: #{@p1.lives}/3 vs P2: #{@p2.lives}/3"
+  end
 end
 
 g1 = Game.new
